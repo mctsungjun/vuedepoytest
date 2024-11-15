@@ -9,7 +9,7 @@ module.exports = {
     proxy: {
       '^/api': {
         target,
-        changeOrigin: false,
+        changeOrigin: true,
         secure:false,
       },
       '^/upload': {
