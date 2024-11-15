@@ -7,7 +7,8 @@ const baseURL = "https://port-0-servernode-m3cudz5w505940d1.sel4.cloudtype.app";
 axios.defaults.baseURL = baseURL; // 실제 API 서버 주소로 변경
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-
+axios.defaults.headers.get['Content-Type'] = 'application/json;charset=utf-8';
+axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
 export default {
     methods: {
         async $api(url, data) {
