@@ -18,7 +18,7 @@ module.exports = {
         secure:false,
       },
       '^/download': {
-        target,
+        target:"https://port-0-servernode-m3cudz5w505940d1.sel4.cloudtype.app",
         changeOrigin: true,
         secure:false,
       }
