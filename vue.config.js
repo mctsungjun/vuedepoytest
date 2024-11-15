@@ -1,4 +1,4 @@
-const target = "https://port-0-nodeservertest-m3cudz5w505940d1.sel4.cloudtype.app";
+const target = "https://nodeservertest:3000";
 
 //로컬
 // const target = "http://localhost:3000";
