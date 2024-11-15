@@ -131,6 +131,7 @@ export default {
         },
         async getproductImage() {
             this.productImag = await this.$api("/api/productMainImages", {param:[this.productId]})
+            console.log("Images", this.productImag);
         }
     }
 
