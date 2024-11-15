@@ -4,7 +4,7 @@ const target = "https://port-0-nodeservertest-m3cudz5w505940d1.sel4.cloudtype.ap
 // const target = "http://localhost:3000";
 
 module.exports = {
-  devServer: {
+  Server: {
     port: 8080,
     proxy: {
       '^/api': {
