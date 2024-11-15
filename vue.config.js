@@ -1,7 +1,7 @@
-// const target = "https://port-0-nodeservertest-m3cudz5w505940d1.sel4.cloudtype.app";
+const target = "https://port-0-nodeservertest-m3cudz5w505940d1.sel4.cloudtype.app";
 
 //로컬
-const target = "http://localhost:3000";
+// const target = "http://localhost:3000";
 
 module.exports = {
   devServer: {
