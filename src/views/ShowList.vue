@@ -79,7 +79,7 @@ export default {
       return this.$currencyFormat(value);
     },
     async getProductList() {
-      this.productList = await this.$api("https://port-0-nodeservertest-m3cudz5w505940d1.sel4.cloudtype.app/api/productList", {});
+      this.productList = await this.$api("/api/productList", {});
       console.log(this.productList);
     },
     orderNow(product_id) {
