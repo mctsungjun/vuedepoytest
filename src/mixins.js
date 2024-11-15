@@ -3,8 +3,8 @@ import axios from 'axios';
 axios.defaults.baseURL = 'http://localhost:3000';
 //배포
 // axios.defaults.baseURL = 'https://port-0-nodeservertest-m3cudz5w505940d1.sel4.cloudtype.app'; // 실제 API 서버 주소로 변경
-axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+// axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
+// axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
 export default {
     methods: {
