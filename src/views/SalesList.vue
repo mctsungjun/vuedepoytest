@@ -17,7 +17,7 @@
             </thead>
             <tbody>
                 <tr :key="i" v-for="(product, i) in productList">
-                    <td><img v-if="product.path!=null" :src="`/download/${product.id}/${product.path}`" style="height:50px;width:auto;"/></td>
+                    <td><img v-if="product.path!=null" :src="`/download/${product.id}/${product.path}?t=${new Date().getTime()}`" style="height:50px;width:auto;"/></td>
                     <td>{{ product.product_name }}</td>
                     <td>{{ product.product_price }}</td>
                     <td>{{ product.delivery_price }}</td>
