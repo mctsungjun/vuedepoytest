@@ -11,7 +11,7 @@
       <div class="mb-3 row">
         <label class="col-md-3 col-form-label">제품명</label>
         <div class="col-md-9">
-          {{productDetail.product_name}}
+          {{productName}}
         </div>
       </div>
       <div class="mb-3 row">
@@ -98,7 +98,7 @@ export default {
   },
   created() {
     this.productId = this.$route.query.product_id;
-    
+    this.productName = this.$route.query.product_name;
     this.getproductDetail();
     this.getProductImage();
   },
