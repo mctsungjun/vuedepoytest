@@ -17,7 +17,7 @@
             </thead>
             <tbody>
                 <tr :key="i" v-for="(product, i) in productList">
-                    <td><img v-if="product.path!=null" :src="`/download/${product.id}/${product.path}`" style="height:50px;width:auto;"/></td>
+                    <td><img v-if="product.path!=null" :src="`https://port-0-servernode-m3cudz5w505940d1.sel4.cloudtype.app/download/12/0024344670__MW41545_5013727179__2_84_84.jpg`" style="height:50px;width:auto;"/></td>
                     <td>{{ product.product_name }}</td>
                     <td>{{ product.product_price }}</td>
                     <td>{{ product.delivery_price }}</td>
