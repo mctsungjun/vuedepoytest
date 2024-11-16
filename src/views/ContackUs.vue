@@ -48,7 +48,7 @@
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>이메일</h3>
-                <p><a href="m97161@gmail.com" class="btn btn-primary"></a></p>
+                <p class="btn btn-primary">m97161@gmail.com" </p>
               </div>
             </div>
             <!-- End Info Item -->
