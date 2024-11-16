@@ -3,10 +3,9 @@
   <section id="contact" class="contact section">
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-      <h2>Contact</h2>
+      <h2 class="text-warning">Contact</h2>
       <p>
-        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-        consectetur velit
+        사이트에 수시로 방문하지 않고 자주 사용하시는 이메일을 통해 간편하게 답변을 확인하실 수 있습니다
       </p>
     </div>
     <!-- End Section Title -->
@@ -22,8 +21,8 @@
             >
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
-                <h3>Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h3>주소</h3>
+                <p>서울시 광진구 천호대로 536, 7층 735호</p>
               </div>
             </div>
             <!-- End Info Item -->
@@ -35,8 +34,8 @@
             >
               <i class="bi bi-telephone flex-shrink-0"></i>
               <div>
-                <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
+                <h3>연락처</h3>
+                <p>02 5589 5548</p>
               </div>
             </div>
             <!-- End Info Item -->
@@ -48,8 +47,8 @@
             >
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
-                <h3>Email Us</h3>
-                <p><a href="#" class=""></a></p>
+                <h3>이메일</h3>
+                <p><a href="m97161@gmail.com" class="btn btn-primary"></a></p>
               </div>
             </div>
             <!-- End Info Item -->
@@ -67,7 +66,7 @@
           >
             <div class="row gy-4">
               <div class="col-md-6">
-                <label for="name-field" class="pb-2">Your Name</label>
+                <label for="name-field" class="pb-2">이름</label>
                 <input
                   type="text"
                   name="name"
@@ -78,7 +77,7 @@
               </div>
 
               <div class="col-md-6">
-                <label for="email-field" class="pb-2">Your Email</label>
+                <label for="email-field" class="pb-2">이메일</label>
                 <input
                   type="email"
                   class="form-control"
@@ -89,7 +88,7 @@
               </div>
 
               <div class="col-md-12">
-                <label for="subject-field" class="pb-2">Subject</label>
+                <label for="subject-field" class="pb-2">제목</label>
                 <input
                   type="text"
                   class="form-control"
@@ -100,7 +99,7 @@
               </div>
 
               <div class="col-md-12">
-                <label for="message-field" class="pb-2">Message</label>
+                <label for="message-field" class="pb-2">문의내용</label>
                 <textarea
                   class="form-control"
                   name="message"
@@ -114,10 +113,10 @@
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">
-                  Your message has been sent. Thank you!
+                  문의해주셔서 감사합니다.
                 </div>
 
-                <button type="submit">Send Message</button>
+                <button type="submit">작성</button>
               </div>
             </div>
           </form>
