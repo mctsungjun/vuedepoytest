@@ -129,6 +129,8 @@ export default {
       console.log('this.productImage',this.productImage)
     },
     deleteImage(id,path) {
+      console.log("id",id);
+      console.log("path",path);
       this.$swal
         .fire({
           title: "정말 삭제 하시겠습니까?",
