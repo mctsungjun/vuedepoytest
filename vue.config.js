@@ -17,10 +17,11 @@ module.exports = {
         changeOrigin: true,
         secure:false,
       },
-      '^/download': {
-        target,
+      '/download': {
+        target:"https://port-0-servernode-m3cudz5w505940d1.sel4.cloudtype.app",
         changeOrigin: true,
         secure:false,
+        pathRewrite: { '^/download': '/download' }
       }
     },
   }
