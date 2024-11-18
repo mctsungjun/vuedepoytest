@@ -38,7 +38,29 @@ export default {
       //지도 객체를 등록합니다.
       //지도 객체는 반응형 관리 대상이 아니므로 initMap에서 선언합니다.
       this.map = new kakao.maps.Map(container, options);
+      this.displayMarker(options.center);
     },
+    displayMarker(locPosition, message="회사") {
+      // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({  
+        map: this.map, 
+        position: locPosition
+    }); 
+    
+    var iwContent = message, // 인포윈도우에 표시할 내용
+        iwRemoveable = true;
+
+    // 인포윈도우를 생성합니다
+    var infowindow = new kakao.maps.InfoWindow({
+        content : iwContent,
+        removable : iwRemoveable
+    });
+    
+    // 인포윈도우를 마커위에 표시합니다 
+    infowindow.open(marker.map);
+    
+      
+}    
     },
 
 

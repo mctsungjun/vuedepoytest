@@ -22,7 +22,7 @@
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
                 <h3>주소</h3>
-                <p class="success">서울시 광진구 천호대로 536, 7층 735호</p>
+                <p class="text-success">서울시 광진구 천호대로 536, 7층 735호</p>
               </div>
             </div>
             <!-- End Info Item -->
@@ -110,9 +110,9 @@
               </div>
 
               <div class="col-md-12 text-center">
-                <div class="loading">Loading</div>
+                <div class="loading"></div>
                 <div class="error-message"></div>
-                <div class="sent-message">
+                <div class="sent-message h5 text-warning-emphasis">
                   문의해주셔서 감사합니다.
                 </div>
 
