@@ -22,7 +22,7 @@
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
                 <h3>주소</h3>
-                <p>서울시 광진구 천호대로 536, 7층 735호</p>
+                <p class="success">서울시 광진구 천호대로 536, 7층 735호</p>
               </div>
             </div>
             <!-- End Info Item -->
@@ -35,7 +35,7 @@
               <i class="bi bi-telephone flex-shrink-0"></i>
               <div>
                 <h3>연락처</h3>
-                <p>02 5589 5548</p>
+                <p class="text-secondary">02 5589 5548</p>
               </div>
             </div>
             <!-- End Info Item -->
@@ -48,7 +48,7 @@
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>이메일</h3>
-                <p class="btn btn-primary">m97161@gmail.com" </p>
+                <p class="text-primary">m97161@gmail.com </p>
               </div>
             </div>
             <!-- End Info Item -->
@@ -72,7 +72,7 @@
                   name="name"
                   id="name-field"
                   class="form-control"
-                  required=""
+                  required="" v-model="name"
                 />
               </div>
 
@@ -83,7 +83,7 @@
                   class="form-control"
                   name="email"
                   id="email-field"
-                  required=""
+                  required="" v-model="email"
                 />
               </div>
 
@@ -94,7 +94,7 @@
                   class="form-control"
                   name="subject"
                   id="subject-field"
-                  required=""
+                  required="" v-model="title"
                 />
               </div>
 
@@ -105,7 +105,7 @@
                   name="message"
                   rows="10"
                   id="message-field"
-                  required=""
+                  required="" v-model="content"
                 ></textarea>
               </div>
 
@@ -116,7 +116,7 @@
                   문의해주셔서 감사합니다.
                 </div>
 
-                <button type="submit">작성</button>
+                <button type="button" class="btn btn-warning mt-2" @click="sendMail">작성</button>
               </div>
             </div>
           </form>
@@ -135,7 +135,30 @@ export default {
     name: 'contactusComponent',
     components: {
         KakaoMap,
+    },data() {
+      return {
+        name: '',
+        email: '',
+        title: '',
+        content: '',
+      }
     },
+    methods: {
+      async sendMail() {
+       
+        let sendOk = await this.$api("/send-email", {param: [this.name, this.email, this.title, this.content]});
+        console.log("send", sendOk); 
+        if (sendOk =="ok"){
+
+            // 입력값 초기화
+            this.name = '';
+            this.email = '';
+            this.title = '';
+            this.content = '';
+            this.$swal("메일이 전송 되었습니다.");
+        }
+      }
+    }
 };
 </script>
 <style>

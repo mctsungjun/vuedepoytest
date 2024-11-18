@@ -21,7 +21,12 @@ module.exports = {
         target,
         changeOrigin: true,
         secure:false,
-      }
+      },
+      '^/send-email': {
+        target,
+        changeOrigin: true,
+        secure:false,
+      },
     },
   }
 
