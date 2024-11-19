@@ -63,7 +63,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="col-6 d-grid p-1">
 
-                                <button type="button" class="btn btn-outline-secondary btn-lg">
+                                <button type="button" class="btn btn-outline-secondary btn-lg" @click="barsket">
                                 장바구니 담기
                                 </button>
                             </div>
@@ -98,8 +98,8 @@ export default {
             productId: 0,
             productImag: [],
             total: 1,
-            totalPrice: 0
-
+            totalPrice: 0,
+            user: this.$store.state.user.user_id
         };
     },
     created() {
@@ -132,6 +132,22 @@ export default {
         async getproductImage() {
             this.productImag = await this.$api("/api/productMainImages", {param:[this.productId]})
             console.log("Images", this.productImag);
+        },
+        async orderNow() {
+            try{
+                let result = await this.$api("/kakaopay", {param:[this.user,this.productId, this.productDetail.product_name, this.productDetail.product_price,this.productDetail.delivery_price,this.total,this.totalPrice]});
+                // console.log(result)
+                //카카오 결제 페이지로 리디렉션
+
+                window.open(result.next_redirect_pc_url, '_blank','width=800,height=600');
+
+            } catch(error){
+                console.error('Payment Error:', error);
+                this.$swal('결제를 진행할수없습니다.');
+            }
+        },
+        barsket() {
+            this.$swal("장바구니에 담겼습니다.")
         }
     }
 

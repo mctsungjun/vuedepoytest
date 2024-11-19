@@ -27,6 +27,16 @@ module.exports = {
         changeOrigin: true,
         secure:false,
       },
+      '^/kakaopay': {
+        target,
+        changeOrigin: true,
+        secure:false
+      },
+      '^/payment/confirm' : {
+        target,
+        changeOrigin: true,
+        secure:false
+      }
     },
   }
 

@@ -15,6 +15,7 @@ import ShowRegister from '@/views/ShowRegister.vue';
 import SalesList from '@/views/SalesList.vue';
 import ImageInsert from '@/views/imageInsert.vue';
 import ProductUdate from '@/views/ProductUdate.vue';
+import KakaoSuccess from '@/views/KakaoSuccess.vue';
 const routes = [
   {
     path: '/',
@@ -95,7 +96,11 @@ const routes = [
     path:'/goToUpdate',
     name: 'ProductUdate',
     component: ProductUdate,
-  },
+  }, {
+    path:'/kakaosuccess',
+    name: 'Kakaosuccess',
+    component: KakaoSuccess,
+  }
   
     
   
