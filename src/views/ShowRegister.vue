@@ -145,7 +145,7 @@ export default {
       let category2 = [];
       category2 = categoryList.filter(c => {
         return  c.category1 == category1[0];
-      }); // 카테고리 1에 포함된것중에만 가져오기
+      });       // 카테고리 1에 포함된것중에만 가져오기
 
       let oCategory2 = {};
       category2.forEach(item =>{
