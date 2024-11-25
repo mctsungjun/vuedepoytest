@@ -36,7 +36,39 @@ module.exports = {
         target,
         changeOrigin: true,
         secure:false
+      },
+      '^/fileDownload': {
+        target,
+        changeOrigin: true,
+        secure:false,
+      },
+      '^/fileUpload': {
+        target,
+        changeOrigin: true,
+        secure:false,
+      },
+      '^/boardUpdate': {
+        target,
+        changeOrigin: true,
+        secure:false,
+      },
+      '^/boardFileUpdate': {
+        target,
+        changeOrigin: true,
+        secure:false,
+      },
+      '^/deleteAllFile': {
+        target,
+        changeOrigin: true,
+        secure:false,
+      },
+      '^/boardDelete': {
+        target,
+        changeOrigin: true,
+        secure:false,
       }
+   
+    
     },
   }
 

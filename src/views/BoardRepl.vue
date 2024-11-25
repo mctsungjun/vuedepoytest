@@ -6,24 +6,24 @@
                     <div class="col-xl-6">
                         <form class="form-group" name="frmBoard" method="POST" enctype="multipart/form-data">
                         <label>아이디</label>
-                        <input class="form-control" type="text" name="id" th:value="${session.id}" readonly ><br/>
+                        <input class="form-control" type="text" name="id" :value="id" readonly ><br/>
                         <label>제목 </label>
-                        <input class="form-control" type="text" name="subject"><br/>
-                        <textarea class="doc form-control" name="doc" rows="10"></textarea><br/>
-                        <input type="hidden" name="sno" th:value="${bo.sno}"/>
-                        <input type="hidden" name="grp" th:value="${bo.grp}"/>
+                        <input class="form-control" type="text" name="subject" v-model="subject"><br/>
+                        <textarea class="doc form-control" name="doc" rows="10" v-model="doc"></textarea><br/>
+                        <!-- <input type="hidden" name="sno" :value="{sno}"/> -->
+                        <input type="hidden" name="grp" :value="grp"/>
 
-                        <input type="hidden" name="seq" th:value="${bo.seq}" />
-                        <input type="hidden" name="deep" th:value="${bo.deep}"/>
-                        <label>파일첨부</label>
-                        <input class="form-control btnAtt" type="file" name="files" multiple><br/>
+                        <input type="hidden" name="seq" :value="seq" />
+                        <input type="hidden" name="deep" :value="deep"/>
+                        <!-- <label>파일첨부</label>
+                        <input class="form-control btnAtt" type="file" ref="fileInput" multiple @change="fileUpload($event.target.files, 3)"><br/> -->
                        
                     </form>
                     <div class="btnZone">
                         <div class="d-flex justify-content-end">
 
-                            <button type="button" class="btn btn-outline-dark btnRegisterR">작성</button>
-                            <button type="button" class="btn btn-outline-dark btnList mx-1">취소</button>
+                            <button type="button" class="btn btn-outline-dark" @click="boardRepUpload">작성</button>
+                            <button type="button" class="btn btn-outline-darkmx-1" @click="cancel">취소</button>
                         </div>
                     
                     </div>
@@ -34,7 +34,88 @@
 </template>
 <script>
 export default {
-    name: "boardRepl"
+    name: "boardReplComponent",
+    data() {
+        return {
+            id: '',
+            doc:'',
+            subject:'',
+            grp:0,
+            sno:0,
+            seq:0,
+            deep:0,
+            psno:0,
+           
+        }
+    },
+    mounted() {
+        const { id, sno, grp, seq, deep,psno} = this.$route.query;
+        this.id = id;
+        this.sno = sno;
+        this.grp = grp;
+        this.seq = seq;
+        this.deep = deep;
+        this.psno = psno
+        console.log(grp,seq,deep);
+    },
+    methods: {
+        fileUpload(files) {
+            this.selectfiles = Array.from(files); // 선택된 파일을 배열로 저장
+        },
+        clearFileInput() {
+            this.$refs.fileInput.value = '';
+        },
+        async boardRepUpload() {
+            
+                if (this.grp==0 && this.seq == 0){
+                    
+                    const res = await this.$api("/api/boardRep",{param:[this.id,this.subject,this.doc,this.psno,Number(this.seq)+1,this.deep,Number(this.grp)]});
+                    console.log("boardRep:", res.data);
+
+                }
+                else if( this.grp ==0 && this.seq ==1 && this.deep ==0){
+                    const res = await this.$api("/api/boardRep",{param:[this.id,this.subject,this.doc,this.psno,Number(this.seq),Number(this.deep)+1,this.grp]});
+                    console.log("boardRep:", res.data);
+                }
+                else if( this.grp ==0 && this.seq ==1 && this.deep ==1){
+                    const res = await this.$api("/api/boardRep",{param:[this.id,this.subject,this.doc,this.psno,Number(this.seq)+1,Number(this.deep)+1,this.grp]});
+                    console.log("boardRep:", res.data);
+                }
+                await this.$router.push({path:'/boardList'})
+        //     if (this.selectfiles.length != 0) {
+        //         const formData = new FormData();
+        //         this.selectfiles.forEach((file) => {
+        //             formData.append("files", file);
+        //         });
+        //         const response = await this.$api("/fileUpload",formData,{
+        //             headers: {
+        //                 "Content-Type": "multipart/form-data",
+        //                 },
+        //         });
+        //         if (response === 'ok'){
+        //             console.log("response:",response);
+        //             this.$swal('등록 되었습니다.');
+        //             this.user = this.$store.state.user.user_id;
+        //             this.title = '';
+        //             this.doc='';
+        //             this.clearFileInput();
+
+        //         }
+
+        //     }
+
+
+        //     }catch(error){
+        //         console.error('파일 업로드 실패:', error);
+        //         this.$swal('파일 업로드 실패했습니다.');
+        //     }
+            
+        },
+        cancel() {
+            this.$router.push({path:'/boardList'})
+        },
+
+    }
     
 }
 </script>
