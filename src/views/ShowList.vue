@@ -20,7 +20,7 @@
         <div class="col-xl-3 col-lg-4 col-md-6" :key="i" v-for="(product, i) in productList">
           <div class="card" style="width: 18rem">
             <a @click="orderNow(product.id)" style="cursor: pointer;"> <img
-              :src="`https://port-0-servernode-m3cudz5w505940d1.sel4.cloudtype.app/download/${product.id}/${product.path}`"
+              :src="`/download/${product.id}/${product.path}`"
               class="card-img-top"
               alt="..."
             /></a>

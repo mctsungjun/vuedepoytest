@@ -10,7 +10,7 @@
                     </div>
                     <div class="carousel-inner">
                         <div :class="`carousel-item ${i==0?'active':''}`" v-for="(pimage, i) in productImag" :key="i">
-                        <img :src="`https://port-0-servernode-m3cudz5w505940d1.sel4.cloudtype.app/download/${productId}/${pimage.path}`" class="d-block w-100" alt="...">
+                        <img :src="`/download/${productId}/${pimage.path}`" class="d-block w-100" alt="...">
                         </div>
                        
                     </div>
@@ -82,7 +82,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <img class="img-fluid" :src="`https://port-0-servernode-m3cudz5w505940d1.sel4.cloudtype.app/download/${productId}/${productDetail.path}`">
+                <img class="img-fluid" :src="`/download/${productId}/${productDetail.path}`">
             </div>
         </div>
     </div>
@@ -102,6 +102,7 @@ export default {
             user: this.$store.state.user.user_id
         };
     },
+ 
     created() {
         // 전에 커리 날린것을 가져옴
         this.productId = this.$route.query.product_id; // product_id 는 전에 변수 적어줌
@@ -131,7 +132,6 @@ export default {
         },
         async getproductImage() {
             this.productImag = await this.$api("/api/productMainImages", {param:[this.productId]})
-            console.log("Images", this.productImag);
         },
         async orderNow() {
             try{

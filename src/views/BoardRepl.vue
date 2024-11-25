@@ -82,7 +82,33 @@ export default {
                     console.log("boardRep:", res.data);
                 }
                 await this.$router.push({path:'/boardList'})
-       
+        //     if (this.selectfiles.length != 0) {
+        //         const formData = new FormData();
+        //         this.selectfiles.forEach((file) => {
+        //             formData.append("files", file);
+        //         });
+        //         const response = await this.$api("/fileUpload",formData,{
+        //             headers: {
+        //                 "Content-Type": "multipart/form-data",
+        //                 },
+        //         });
+        //         if (response === 'ok'){
+        //             console.log("response:",response);
+        //             this.$swal('등록 되었습니다.');
+        //             this.user = this.$store.state.user.user_id;
+        //             this.title = '';
+        //             this.doc='';
+        //             this.clearFileInput();
+
+        //         }
+
+        //     }
+
+
+        //     }catch(error){
+        //         console.error('파일 업로드 실패:', error);
+        //         this.$swal('파일 업로드 실패했습니다.');
+        //     }
             
         },
         cancel() {

@@ -35,7 +35,7 @@
               <i class="bi bi-telephone flex-shrink-0"></i>
               <div>
                 <h3>연락처</h3>
-                <p class="text-secondary">02 5589 5548</p>
+                <p class="text-warning">02 5589 5548</p>
               </div>
             </div>
             <!-- End Info Item -->
@@ -110,10 +110,10 @@
               </div>
 
               <div class="col-md-12 text-center">
-                <div class="loading"></div>
+                
                 <div class="error-message"></div>
-                <div class="sent-message h5 text-warning-emphasis">
-                  문의해주셔서 감사합니다.
+                <div class="sent-message">
+                  <p class="h5">문의해주셔서 감사합니다.</p>
                 </div>
 
                 <button type="button" class="btn btn-warning mt-2" @click="sendMail">작성</button>
@@ -135,7 +135,8 @@ export default {
     name: 'contactusComponent',
     components: {
         KakaoMap,
-    },data() {
+    },
+    data() {
       return {
         name: '',
         email: '',
