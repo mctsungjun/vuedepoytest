@@ -138,7 +138,7 @@ export default {
         })
         .then(async (result) => {
           if (result.isConfirmed) {
-            await this.$api("/api/imageDelete", { param: [path] });
+            await this.$api("/api/imageDelete", { param: [id,path] });
             this.getProductImage();
             this.$swal.fire("삭제되었습니다!", "", "success");
           }
