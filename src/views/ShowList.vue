@@ -37,14 +37,14 @@
                 <div class="btn-group" role="group">
                   <button
                     type="button"
-                    class="btn btn-outline-secondary btn-sm"
+                    class="btn btn-outline-secondary btn-sm" @click="barsket"
                   >
                     장바구니 담기
                   </button>
                   <button
                     type="button"
                     class="btn btn-outline-secondary btn-sm"
-                    @click="orderNow"
+                    @click="orderNow(product.id)"
                   >
                     주문하기
                   </button>
@@ -87,7 +87,10 @@ export default {
     },
     btnRegisterForm(){
       this.$router.push({path:"/salesList"});
-    }
+    },
+    barsket() {
+            this.$swal("장바구니에 담겼습니다.")
+        }
   },
 };
 </script>
