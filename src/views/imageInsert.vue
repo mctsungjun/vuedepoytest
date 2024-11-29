@@ -20,7 +20,7 @@
           <div class="row">
             <div class="col-lg-3 col-md-4 col-sm-2" :key="i" v-for="(m,i) in productImage.filter(c=>c.p_type===1)">
               <div class="position-relative">
-                <img :src="`/download/${productId}/${m.path}`" class="img-fluid" />
+                <img :src="`https://port-0-servernode-m3cudz5w505940d1.sel4.cloudtype.app/download/${productId}/${m.path}`" class="img-fluid" />
                 <div class="position-absolute top-0 end-0" style="cursor:pointer;" @click="deleteImage(productId,m.path)">X</div>
               </div>
             </div>
@@ -41,7 +41,7 @@
           <div class="row">
             <div class="col-lg-3 col-md-4 col-sm-2" :key="i" v-for="(m,i) in productImage.filter(c=>c.p_type==2)">
               <div class="position-relative">
-                <img :src="`/download/${productId}/${m.path}`" class="img-fluid" />
+                <img :src="`https://port-0-servernode-m3cudz5w505940d1.sel4.cloudtype.app/download/${productId}/${m.path}`" class="img-fluid" />
                 <div class="position-absolute top-0 end-0" style="cursor:pointer;" @click="deleteImage(productId,m.path)">X</div>
               </div>
             </div>
@@ -72,7 +72,7 @@
             </div>
             <div class="col-lg-6 col-md-4" :key="i" v-for="(m,i) in productImage.filter(c=>c.p_type==3)">
               <div class="position-relative">
-                <img :src="`/download/${productId}/${m.path}`" class="img-fluid" />
+                <img :src="`https://port-0-servernode-m3cudz5w505940d1.sel4.cloudtype.app/download/${productId}/${m.path}`" class="img-fluid" />
                 <div class="position-absolute top-0 end-0" style="cursor:pointer;color:white;" @click="deleteImage(productId,m.path)">X</div>
               </div>
             </div>
